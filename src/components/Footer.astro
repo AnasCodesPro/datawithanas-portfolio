@@ -10,12 +10,12 @@ import { profile } from '../data/portfolio';
       <span class="text-accent">&gt;</span> {profile.brand}<span class="text-accent">_</span>
     </p>
     <p>© 2026 {profile.name}. Built with Astro & Tailwind CSS.</p>
-    <div class="flex items-center gap-4">
+    <div class="-m-2.5 flex items-center gap-2">
       <a
         href={profile.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="transition-colors hover:text-accent"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:text-accent"
         aria-label="GitHub"
       >
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -26,7 +26,7 @@ import { profile } from '../data/portfolio';
         href={profile.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        class="transition-colors hover:text-accent"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:text-accent"
         aria-label="LinkedIn"
       >
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -35,7 +35,7 @@ import { profile } from '../data/portfolio';
       </a>
       <a
         href={`mailto:${profile.email}`}
-        class="transition-colors hover:text-accent"
+        class="inline-flex h-11 w-11 items-center justify-center rounded-md transition-colors hover:text-accent"
         aria-label="Email"
       >
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

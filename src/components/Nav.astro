@@ -16,13 +16,15 @@ import { profile, navLinks } from '../data/portfolio';
       {profile.brand}<span class="text-accent">_</span>
     </a>
 
-    <ul class="hidden items-center gap-7 md:flex">
+    <!-- Desktop nav -->
+    <ul class="hidden items-center gap-7 lg:flex">
       {
         navLinks.map((link) => (
           <li>
             <a
               href={link.href}
-              class="text-sm text-muted transition-colors hover:text-text"
+              data-navlink={link.href}
+              class="text-sm text-muted transition-colors hover:text-text aria-[current=true]:font-medium aria-[current=true]:text-text"
             >
               {link.label}
             </a>
@@ -33,34 +35,154 @@ import { profile, navLinks } from '../data/portfolio';
 
     <a
       href="#contact"
-      class="rounded-full border border-border-strong px-4 py-1.5 text-sm font-medium text-text transition-colors hover:border-accent hover:text-accent"
+      class="hidden items-center rounded-full border border-border-strong px-4 py-2 text-sm font-medium text-text transition-colors hover:border-accent hover:text-accent lg:inline-flex"
     >
       Get in touch
     </a>
+
+    <!-- Mobile menu toggle -->
+    <button
+      id="nav-toggle"
+      type="button"
+      class="-mr-2 flex h-11 w-11 items-center justify-center rounded-md text-text transition-colors hover:text-accent lg:hidden"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg
+        id="nav-icon-open"
+        class="h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg
+        id="nav-icon-close"
+        class="hidden h-6 w-6"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile menu panel -->
+  <div
+    id="mobile-menu"
+    class="hidden border-b border-border bg-bg/95 backdrop-blur-md lg:hidden"
+  >
+    <ul class="mx-auto flex max-w-5xl flex-col px-6 py-2">
+      {
+        navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              data-navlink={link.href}
+              data-mobile-link
+              class="flex min-h-[44px] items-center text-base text-muted transition-colors hover:text-text aria-[current=true]:font-medium aria-[current=true]:text-accent"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li>
+        <a
+          href="#contact"
+          data-mobile-link
+          class="mt-2 mb-3 inline-flex min-h-[44px] items-center justify-center rounded-full border border-border-strong px-4 text-base font-medium text-text transition-colors hover:border-accent hover:text-accent"
+        >
+          Get in touch
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
 
 <script>
-  // Add a translucent backdrop to the nav once the user scrolls.
+  // 1. Translucent backdrop once scrolled.
   const nav = document.getElementById('nav');
   const onScroll = () => {
     if (!nav) return;
-    if (window.scrollY > 24) {
-      nav.classList.add(
-        'border-border',
-        'bg-bg/80',
-        'backdrop-blur-md',
-        'supports-[backdrop-filter]:bg-bg/70'
-      );
-    } else {
-      nav.classList.remove(
-        'border-border',
-        'bg-bg/80',
-        'backdrop-blur-md',
-        'supports-[backdrop-filter]:bg-bg/70'
-      );
-    }
+    const scrolled = window.scrollY > 24;
+    nav.classList.toggle('border-border', scrolled);
+    nav.classList.toggle('bg-bg/80', scrolled);
+    nav.classList.toggle('backdrop-blur-md', scrolled);
+    nav.classList.toggle('supports-[backdrop-filter]:bg-bg/70', scrolled);
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // 2. Mobile menu toggle.
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('nav-icon-open');
+  const iconClose = document.getElementById('nav-icon-close');
+
+  const setMenu = (open: boolean) => {
+    if (!menu || !toggle) return;
+    menu.classList.toggle('hidden', !open);
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    setMenu(!open);
+  });
+
+  // Close the menu after tapping a link or pressing Escape.
+  document
+    .querySelectorAll<HTMLAnchorElement>('[data-mobile-link]')
+    .forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  // 3. Active-section highlighting.
+  const links = document.querySelectorAll<HTMLAnchorElement>('[data-navlink]');
+  const byHash = new Map<string, HTMLAnchorElement[]>();
+  links.forEach((a) => {
+    const href = a.getAttribute('data-navlink') ?? '';
+    byHash.set(href, [...(byHash.get(href) ?? []), a]);
+  });
+
+  const sections = Array.from(byHash.keys())
+    .map((href) => document.querySelector(href))
+    .filter((el): el is HTMLElement => el instanceof HTMLElement);
+
+  const setActive = (id: string) => {
+    links.forEach((a) =>
+      a.setAttribute('aria-current', String(a.getAttribute('data-navlink') === `#${id}`))
+    );
+  };
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries
+          .filter((e) => e.isIntersecting)
+          .forEach((e) => setActive(e.target.id));
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+    sections.forEach((s) => spy.observe(s));
+  }
 </script>

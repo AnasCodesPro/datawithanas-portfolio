@@ -43,14 +43,13 @@ Implemented as `--color-*` in `global.css`. **Never hardcode hex in components �
 | Border strong | `--color-border-strong` | `#2a3340` | Emphasized borders, scrollbar |
 | Text | `--color-text` | `#e6edf3` | Primary text (≥ 4.5:1 on bg/surface) |
 | Muted | `--color-muted` | `#9aa7b4` | Secondary text (≥ 4.5:1 on bg) |
-| Faint | `--color-faint` | `#64727f` | Tertiary / captions — **headings & labels only, not body** |
+| Faint | `--color-faint` | `#7a8693` | Tertiary text, captions, meta, labels (AA-compliant, 5.21:1) |
 | Accent | `--color-accent` | `#2dd4bf` | Primary accent (teal), links, focus ring, gradient start |
 | Accent soft | `--color-accent-soft` | `#14b8a6` | Hover/pressed accent, solid CTA fill |
 | Accent 2 | `--color-accent-2` | `#38bdf8` | Gradient end (sky), secondary highlight |
 
 **Contrast rules**
-- `--color-text` and `--color-muted` on `--color-bg`/`--color-surface` meet AA (4.5:1).
-- `--color-faint` (#64727f on #0a0e14 ≈ 4.0:1) is **large-text / label only** — never body copy or essential small text.
+- All three text tokens meet AA (4.5:1) on `--color-bg`/`--color-surface`: text ≈ 13:1, muted 7.88:1, faint 5.21:1. Maintain this hierarchy (text > muted > faint) when adjusting.
 - Accent teal/sky are bright enough for large text and UI glyphs (≥3:1); for accent text smaller than 18px, prefer `--color-text` and reserve accent for emphasis spans, icons, and borders.
 - Never convey meaning by color alone — pair with icon, label, or weight.
 
@@ -87,7 +86,7 @@ Implemented as `--color-*` in `global.css`. **Never hardcode hex in components �
 
 - **Spacing scale:** 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 px (Tailwind `1 2 3 4 6 8 12 16 24`). Stay on the scale.
 - **Section vertical rhythm:** `py-24` desktop / `py-16` mobile between major sections.
-- **Container:** `max-w-6xl` (1152px) centered, `px-6` mobile / `px-8` desktop gutters.
+- **Container:** `max-w-5xl` (1024px) centered, `px-6` gutters. Used consistently across all sections.
 - **Card radius:** `--radius-card` = 14px. Buttons/tags: 8–10px / pill for tags.
 - **Breakpoints:** 375 / 768 (`md`) / 1024 (`lg`) / 1440. Mobile-first. No horizontal scroll. `min-h-dvh` over `100vh`.
 - **Z-index scale:** 0 base · 10 sticky nav · 20 dropdowns · 40 overlays · 100 modals.

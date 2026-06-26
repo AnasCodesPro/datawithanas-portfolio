@@ -19,7 +19,7 @@
 
   --color-text: #e6edf3;
   --color-muted: #9aa7b4;
-  --color-faint: #64727f;
+  --color-faint: #7a8693; /* WCAG AA on --color-bg (5.21:1) */
 
   --color-accent: #2dd4bf;
   --color-accent-soft: #14b8a6;

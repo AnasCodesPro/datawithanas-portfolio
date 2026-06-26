@@ -7,7 +7,17 @@
       "Bash(git --version)",
       "Bash(echo \"git: $\\(git --version 2>/dev/null\\)\")",
       "Bash(npm install *)",
-      "Bash(py --version)"
+      "Bash(py --version)",
+      "Bash(ASTRO_TELEMETRY_DISABLED=1 node node_modules/astro/astro.js preview --port 4321)",
+      "Bash(echo \"started pid $!\")",
+      "Read(//tmp/**)",
+      "Bash(kill %1)",
+      "Bash(pkill -f astro)",
+      "Bash(ASTRO_TELEMETRY_DISABLED=1 node node_modules/astro/astro.js build)",
+      "Bash(echo \"preview pid $!\")",
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(node \"/c/Users/mul/AppData/Local/Temp/claude/C--Users-mul-Desktop-datawithanas-portfolio/d0ebcb32-c87f-465f-b0f6-bd8773932969/scratchpad/measure.mjs\")",
+      "Bash(node _measure.mjs 375)"
     ]
   }
 }
