@@ -1,0 +1,35 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { skillGroups } from '../data/portfolio';
+---
+
+<section id="skills" class="mx-auto max-w-5xl px-6 py-24">
+  <SectionHeading
+    index="02 / skills"
+    title="Tooling across the data stack"
+    subtitle="From ingestion and modeling through to BI — the engineering foundation behind the analytics output."
+  />
+
+  <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      skillGroups.map((group, i) => (
+        <div
+          class="reveal group rounded-[14px] border border-border bg-surface/50 p-6 transition-colors hover:border-border-strong"
+          style={`transition-delay:${i * 70}ms`}
+        >
+          <h3 class="mb-4 flex items-center gap-2 font-display text-base font-semibold text-text">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent" />
+            {group.category}
+          </h3>
+          <ul class="flex flex-wrap gap-2">
+            {group.skills.map((skill) => (
+              <li class="rounded-md border border-border bg-elevated px-2.5 py-1 font-mono text-xs text-muted transition-colors group-hover:border-border-strong">
+                {skill}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

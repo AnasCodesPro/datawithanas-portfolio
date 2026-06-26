@@ -1,0 +1,137 @@
+# Portfolio Context for Claude Code
+
+## About Me
+
+- Name: Muhammad Anas
+- Location: Karachi, Pakistan
+- Email: muhammadanasaug@gmail.com
+- Phone: +92-335-232-3374
+- LinkedIn: linkedin.com/in/muhammadanaskhi
+- GitHub: github.com/AnasCodesPro
+- Education: M.S. Data Science, NED University (2022–2024) | B.E. Telecommunications Engineering, NED University (2016–2019)
+
+## Target Roles
+
+Applying for Data Analyst and Data Scientist positions. The portfolio should appeal to both tracks without being split into two separate sites. Highlight the overlap: strong data engineering foundation, ML experience, and business-facing analytics output.
+
+## Target Audience
+
+Recruiters and hiring managers at tech companies, cloud platforms, and data-driven organizations. They should immediately see:
+- 5+ years of hands-on experience
+- End-to-end ownership (data ingestion → modeling → dashboards → stakeholders)
+- Real business impact with numbers (30%, 35%, 50% improvements, etc.)
+- Cloud and ML credibility (AWS Certified, DigitalOcean, Docker, Kubernetes)
+
+## Professional Summary
+
+Data professional with 5+ years of experience across analytics engineering, ML infrastructure, and BI reporting. Currently at DigitalOcean (promoted 3 times in 26 months). M.S. in Data Science from NED University. AWS Certified (ML – Data Engineering).
+
+## Core Skills to Highlight
+
+### Data Science & ML
+- Supervised Learning, Regression, Classification, Clustering
+- Time-Series Modeling (LSTM, ARIMA)
+- Feature Engineering, Model Evaluation, Predictive Analytics
+- MLOps: Docker, Kubernetes, CI/CD, GitHub Actions, Model Versioning
+
+### Data Analytics & BI
+- Power BI, Tableau, KPI Dashboards, Sales Forecasting
+- Statistical Analysis, Descriptive & Predictive Analytics
+- Data Storytelling, Executive Reporting
+
+### Data Engineering
+- ETL Pipelines, Real-time Data Ingestion, Data Modeling
+- SQL Query Optimization, Reporting Automation
+- Snowflake, Databricks (familiar), dbt (familiar)
+
+### Cloud & Databases
+- AWS (ML – Data Engineering Certified), GCP, Azure
+- MySQL, BigQuery, AWS RDS, Redis
+
+### Programming
+- Python (pandas, NumPy, scikit-learn, Matplotlib)
+- SQL, Bash
+
+## Work Experience
+
+### DigitalOcean — Data & Analytics Engineer / Cloud Engineer (Jan 2023 – Present)
+- Promoted 3x in 26 months
+- Built ML-ready cloud infrastructure across AWS, GCP, Linode, DigitalOcean at 99.9%+ uptime
+- Automated ETL workflows → 30% improvement in data reliability
+- Optimized SQL queries and caching → 35% faster data retrieval
+- Built real-time ingestion pipelines → 25% reduction in data processing latency
+- Containerized model deployments (Docker + Kubernetes) → 40% faster deployment
+- CI/CD pipelines via GitHub Actions → 50% reduction in manual effort
+- Collaborated with data scientists, analysts, and product teams on KPI tracking and executive dashboards
+
+### TeleCard Private Limited — BI Analyst (Mar 2020 – Dec 2022)
+- Built Power BI and Tableau dashboards for senior management
+- Sales forecasting models on call flow and revenue data
+- Statistical analysis on network data → 15% improvement in network quality
+- Automated monitoring and alerting systems → 20% better operational continuity, 25% less downtime
+- Standardized KPI definitions across business units
+
+### Pakistan International Airlines — Network Operations Intern (May–Jun 2019)
+### PTCL — Telecom Intern (Oct–Nov 2018)
+
+## Projects to Feature
+
+### Tropical Storm Damage Detection
+Tags: Python, Remote Sensing, ML Classification, Satellite Imagery
+- Image-based feature extraction pipeline for satellite imagery at scale
+- Supervised ML classification for storm damage severity by region
+- Results visualized in a stakeholder-facing summary dashboard
+
+### Crypto Price Prediction
+Tags: Time-Series, LSTM, ARIMA, Real-time Ingestion, Binance API
+- Real-time data ingestion pipeline via Binance API
+- LSTM and ARIMA models for short-term price forecasting
+- Evaluated using MAE and directional accuracy metrics
+
+### Customer Segmentation & Market Basket Analysis
+Tags: K-Means, Clustering, Power BI, SQL
+- K-Means and hierarchical clustering on 100K+ transactional records
+- Interactive Power BI dashboards for marketing stakeholders
+- Informed targeted campaigns and product bundling strategy
+
+### Real-Time Sales & Revenue Reporting Pipeline
+Tags: ETL, SQL, Tableau, Automation
+- End-to-end pipeline ingesting live transactional data via API
+- Real-time Tableau dashboards for revenue and sales KPIs
+- Reduced time-to-insight from 24 hours to under 30 minutes
+
+## Certifications
+
+- AWS Certified Machine Learning – Data Engineering (2024)
+- MLOps Essentials: Model Development and Integration (LinkedIn, 2025)
+- Generative AI for Data Engineering (LinkedIn, 2025)
+- MySQL for Data Analytics (Udemy, 2020)
+
+## Portfolio Sections
+
+1. Hero — name, title (Data Scientist & Analyst), one-line pitch, CTA buttons (View Projects, Contact)
+2. About — brief bio, education, current role at DigitalOcean
+3. Skills — grouped by category (ML, Analytics/BI, Engineering, Cloud, Programming)
+4. Experience — timeline format, with impact metrics visible
+5. Projects — card layout, each with tags, description, and GitHub link
+6. Certifications — badge or list style
+7. Contact — email, LinkedIn, GitHub
+
+## Tech Stack
+
+- Framework: Astro + Tailwind CSS
+- Hosting: Cloudflare Pages
+- Design: dark theme, minimal and professional, data/tech aesthetic
+
+## Design Preferences
+
+- Dark background with subtle accent color (blue or teal works well for data/tech roles)
+- Clean typography, no clutter
+- Impact numbers should be visually prominent (e.g. "35% faster", "50% less manual effort")
+- Project cards should show tech tags clearly
+- Mobile responsive
+- No stock photos — use icons and subtle data-inspired visuals if needed
+
+## Goals
+
+Visitors should immediately understand that Muhammad Anas can handle both the analytical and engineering sides of data work. Primary CTA is to get in touch or view his GitHub projects.

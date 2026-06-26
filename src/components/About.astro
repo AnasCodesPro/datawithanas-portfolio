@@ -1,0 +1,33 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { about } from '../data/portfolio';
+---
+
+<section id="about" class="mx-auto max-w-5xl px-6 py-24">
+  <SectionHeading index="01 / about" title="The short version" />
+
+  <div class="grid gap-12 md:grid-cols-[1.5fr_1fr]">
+    <div class="reveal space-y-5">
+      {
+        about.summary.map((para) => (
+          <p class="text-lg leading-relaxed text-muted">{para}</p>
+        ))
+      }
+    </div>
+
+    <div class="reveal">
+      <h3 class="mb-5 font-mono text-sm tracking-widest text-faint">EDUCATION</h3>
+      <ul class="space-y-5">
+        {
+          about.education.map((edu) => (
+            <li class="border-l-2 border-border-strong pl-4">
+              <p class="font-display font-medium text-text">{edu.degree}</p>
+              <p class="text-sm text-muted">{edu.school}</p>
+              <p class="mt-1 font-mono text-xs text-faint">{edu.years}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

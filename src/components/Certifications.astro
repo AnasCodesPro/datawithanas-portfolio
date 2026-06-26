@@ -1,0 +1,31 @@
+---
+import SectionHeading from './SectionHeading.astro';
+import { certifications } from '../data/portfolio';
+---
+
+<section id="certifications" class="mx-auto max-w-5xl px-6 py-24">
+  <SectionHeading index="05 / certifications" title="Credentials" />
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    {
+      certifications.map((cert, i) => (
+        <div
+          class="reveal flex items-center gap-4 rounded-[14px] border border-border bg-surface/50 p-5 transition-colors hover:border-border-strong"
+          style={`transition-delay:${i * 60}ms`}
+        >
+          <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <p class="font-medium leading-snug text-text">{cert.name}</p>
+            <p class="mt-0.5 font-mono text-xs text-faint">
+              {cert.issuer} · {cert.year}
+            </p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

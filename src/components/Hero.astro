@@ -1,0 +1,74 @@
+---
+import { profile } from '../data/portfolio';
+---
+
+<section id="top" class="relative overflow-hidden">
+  <!-- Backdrop: dot grid + radial accent glow -->
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute inset-0 bg-dotgrid opacity-[0.5]"></div>
+    <div
+      class="absolute left-1/2 top-[-10%] h-[480px] w-[680px] -translate-x-1/2 rounded-full opacity-40 blur-[120px]"
+      style="background: radial-gradient(circle, rgba(45,212,191,0.30), transparent 70%);"
+    >
+    </div>
+    <div
+      class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-bg"
+    >
+    </div>
+  </div>
+
+  <div class="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-32">
+    <p class="reveal mb-5 inline-flex items-center gap-2 font-mono text-sm text-muted">
+      <span class="relative flex h-2 w-2">
+        <span
+          class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"
+        ></span>
+        <span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span>
+      </span>
+      Available for Data Analyst & Data Scientist roles
+    </p>
+
+    <h1
+      class="reveal max-w-4xl font-display text-5xl font-semibold leading-[1.05] tracking-tight text-text sm:text-6xl lg:text-7xl"
+    >
+      {profile.name}
+    </h1>
+
+    <p class="reveal mt-4 font-display text-2xl font-medium sm:text-3xl">
+      <span class="text-gradient">{profile.title}</span>
+    </p>
+
+    <p class="reveal mt-7 max-w-2xl text-lg leading-relaxed text-muted">
+      {profile.pitch}
+    </p>
+
+    <div class="reveal mt-10 flex flex-wrap items-center gap-4">
+      <a
+        href="#projects"
+        class="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-bg transition-transform hover:-translate-y-0.5 hover:bg-accent-soft"
+      >
+        View projects
+        <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 rounded-full border border-border-strong px-6 py-3 font-medium text-text transition-colors hover:border-accent hover:text-accent"
+      >
+        Contact me
+      </a>
+    </div>
+
+    <div class="reveal mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm text-faint">
+      <span class="inline-flex items-center gap-2">
+        <svg class="h-4 w-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        {profile.location}
+      </span>
+      <span class="hidden h-4 w-px bg-border-strong sm:block"></span>
+      <span>{profile.resumeNote}</span>
+      <span class="hidden h-4 w-px bg-border-strong sm:block"></span>
+      <span>M.S. Data Science · NED University</span>
+    </div>
+  </div>
+</section>
