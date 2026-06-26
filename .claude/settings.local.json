@@ -6,7 +6,8 @@
       "Bash(npm -v)",
       "Bash(git --version)",
       "Bash(echo \"git: $\\(git --version 2>/dev/null\\)\")",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(py --version)"
     ]
   }
 }
