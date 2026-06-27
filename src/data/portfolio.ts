@@ -146,13 +146,19 @@ export const experience: Experience[] = [
     role: 'Network Operations Intern',
     company: 'Pakistan International Airlines',
     period: 'May – Jun 2019',
-    highlights: ['Supported network operations and monitoring.'],
+    highlights: [
+      'Monitored live network infrastructure across PIA\'s internal operations, identifying and escalating fault patterns.',
+      'Gained practical exposure to enterprise network topology and real-time incident tracking workflows.',
+    ],
   },
   {
     role: 'Telecom Intern',
     company: 'PTCL',
     period: 'Oct – Nov 2018',
-    highlights: ['Hands-on exposure to telecom infrastructure and operations.'],
+    highlights: [
+      'Worked within PTCL\'s core telecom infrastructure team, learning switching, transmission, and fiber-optic systems.',
+      'Documented operational procedures and assisted in routine maintenance checks across a live network environment.',
+    ],
   },
 ];
 
