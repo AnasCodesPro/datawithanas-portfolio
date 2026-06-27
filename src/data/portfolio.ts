@@ -160,7 +160,6 @@ export type Project = {
   title: string;
   tags: string[];
   description: string[];
-  github?: string;
 };
 
 export const projects: Project[] = [
@@ -172,7 +171,6 @@ export const projects: Project[] = [
       'Supervised ML classification for storm-damage severity by region.',
       'Results visualized in a stakeholder-facing summary dashboard.',
     ],
-    github: 'https://github.com/AnasCodesPro',
   },
   {
     title: 'Crypto Price Prediction',
@@ -182,7 +180,6 @@ export const projects: Project[] = [
       'LSTM and ARIMA models for short-term price forecasting.',
       'Evaluated using MAE and directional-accuracy metrics.',
     ],
-    github: 'https://github.com/AnasCodesPro',
   },
   {
     title: 'Customer Segmentation & Market Basket Analysis',
@@ -192,7 +189,6 @@ export const projects: Project[] = [
       'Interactive Power BI dashboards for marketing stakeholders.',
       'Informed targeted campaigns and product-bundling strategy.',
     ],
-    github: 'https://github.com/AnasCodesPro',
   },
   {
     title: 'Real-Time Sales & Revenue Reporting Pipeline',
@@ -202,7 +198,6 @@ export const projects: Project[] = [
       'Real-time Tableau dashboards for revenue and sales KPIs.',
       'Cut time-to-insight from 24 hours to under 30 minutes.',
     ],
-    github: 'https://github.com/AnasCodesPro',
   },
 ];
 
